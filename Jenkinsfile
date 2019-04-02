@@ -13,7 +13,7 @@ pipeline {
 	stages {
 	  stage ('GIT Test Project Checkout'){
 		steps {
-			git "${env.GIT_REPO}"
+			git([url: "${env.GIT_REPO}", branch: 'master', credentialsId: '5cb2b674-9cbf-445b-b679-1b2f9943297c'])
 			office365ConnectorSend message: "${env.STAGE_NAME}", webhookUrl: "${env.MSTEAM_WEBHOOK}";
 		}
 	  }
