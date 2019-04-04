@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	environment {
-		GIT_REPO = "https://github.com/ELewis1977/testingawsjenkins.git"
+		GIT_REPO = "ssh://git@github.com:ELewis1977/testingawsjenkins.git"
 		PROJECT = "testingawsjenkins"
 		EMAILLIST = "ewen@sky.com"
 		USER = "ewen"		
@@ -15,7 +15,7 @@ pipeline {
 		steps {
 			echo "Git Checkout ${env.PROJECT}"
 			git branch: 'master',
-			    credentialsId: 'GitHub',
+			    /* credentialsId: 'GitHub',*/
            		    url: "${env.GIT_REPO}"
 			office365ConnectorSend message: "${env.STAGE_NAME}", webhookUrl: "${env.MSTEAM_WEBHOOK}";
 			echo "Git Checkout Completed ${env.PROJECT}"
