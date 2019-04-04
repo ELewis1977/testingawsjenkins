@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	environment {
-		GIT_REPO = "ssh://git@github.com:ELewis1977/testingawsjenkins.git"
+		GIT_REPO = "git@github.com:ELewis1977/testingawsjenkins.git"
 		PROJECT = "testingawsjenkins"
 		EMAILLIST = "ewen@sky.com"
 		USER = "ewen"		
