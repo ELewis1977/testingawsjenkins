@@ -13,10 +13,12 @@ pipeline {
 	stages {
 	  stage ('GIT Test Project Checkout'){
 		steps {
+			echo "Git Checkout ${env.PROJECT}"
 			/*git branch: 'master',
 			    credentialsId: 'GitHub',
            		    url: "${env.GIT_REPO}"
 			office365ConnectorSend message: "${env.STAGE_NAME}", webhookUrl: "${env.MSTEAM_WEBHOOK}";*/
+			echo "Git Checkout Completed ${env.PROJECT}"
 		}
 	  }
 	  
