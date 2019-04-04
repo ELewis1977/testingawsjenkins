@@ -14,7 +14,6 @@ pipeline {
 	  stage ('GIT Test Project Checkout'){
 		steps {
 			git branch: 'master',
-            		    credentialsId: '4dbef3b3-b395-4d07-a859-95b94537d0ce',
            		    url: "${env.GIT_REPO}"
 			office365ConnectorSend message: "${env.STAGE_NAME}", webhookUrl: "${env.MSTEAM_WEBHOOK}";
 		}
